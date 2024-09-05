@@ -1,0 +1,41 @@
+spring:
+  application:
+    name: incident-service
+  datasource:
+    url: jdbc:h2:mem:incident
+    driver-class-name: org.h2.Driver
+    username: sa
+    password: password
+  jpa:
+    hibernate:
+      ddl-auto: none
+    database-platform: org.hibernate.dialect.H2Dialect
+  h2:
+    console:
+      enabled: true
+  cache:
+    type: caffeine
+    cache-names:
+      - incidents        #Cache by id
+      - incident_pages   #Cache by page
+    caffeine:
+      caches:
+        incidents:
+          spec: maximumSize=1000,expireAfterWrite=10m
+        incident_pages:
+          spec: maximumSize=200,expireAfterAccess=2m
+logging:
+  config: classpath:logback-spring.xml
+
+springdoc:
+  api-docs:
+    path: /v3/api-docs
+  swagger-ui:
+    path: /swagger-ui.html
+  info:
+    title: Incident Service API
+    description: API documentation for incident-service
+    version: 1.0.0
+
+server:
+  port: 8080
