@@ -40,6 +40,12 @@ Use Maven to build the project:
 
 mvn clean install
 
+### Running Tests
+
+You can run all unit tests with the following Maven command:
+
+mvn test
+
 ### Running the application
 
 You can run the application using Maven:
@@ -77,16 +83,6 @@ Once the application is running, you can access the API documentation via Swagge
 | DELETE | /api/incidents/{id}     | Delete an incident             |
 | GET    | /api/incidents          | List incidents with pagination |
 
-## Project Structure
-
-
-## Development
-
-### Running Tests
-
-You can run all unit tests with the following Maven command:
-
-mvn test
 
 ### Key Maven Dependencies
 ```xml
