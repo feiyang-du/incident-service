@@ -34,3 +34,4 @@ Incident Management Service is a Spring Boot application designed to manage inci
 ```bash
 git clone https://github.com/yourusername/incident-service.git
 cd incident-service
+```
