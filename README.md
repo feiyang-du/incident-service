@@ -31,14 +31,14 @@ Incident Service is a Spring Boot application designed to manage incidents with 
 
 ### Clone the repository
 
-git clone https://github.com/yourusername/incident-service.git
-cd incident-service
+- git clone https://github.com/feiyang-du/incident-service.git
+- cd incident-service
 
 ### Build the project
 
 Use Maven to build the project:
 
-mvn clean install
+mvn clean package
 
 ### Running Tests
 
@@ -57,12 +57,15 @@ Alternatively, you can run the JAR file directly:
 java -jar target/incident-service.jar
 
 ### Docker Deployment
+#### 1. Use Maven to build the project:
 
-1. Build the Docker image:
+mvn clean package
+
+#### 2. Build the Docker image:
 
 docker build -t incident-service .
 
-2. Run the Docker container:
+#### 3. Run the Docker container:
 
 docker run -p 8080:8080 incident-service
 
